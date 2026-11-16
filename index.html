@@ -841,7 +841,12 @@
   .vs-card li b{color:var(--ink);}
 
   /* ---------- 3국 계산기 ---------- */
-  .cmp3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:2px;}
+  .calc-panel{width:min(1080px,100%);}
+  .calc-grid{grid-template-columns:1fr 1.12fr;}
+  .opt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .opt-table td:first-child,.opt-table th:first-child{width:44%;min-width:132px;}
+  .opt-table th:first-child{min-width:132px;}
+  .cmp3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:2px;}
   .cmp3-card{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff;}
   .cmp3-card.best{border-color:#0e7a55;box-shadow:0 0 0 1px #0e7a55 inset;}
   .cmp3-card .ck{font-size:11px;font-weight:800;color:var(--muted);display:flex;align-items:center;gap:4px;}
@@ -857,6 +862,9 @@
   .opt-table .plus{color:#b1252b;font-weight:800;}
 
   @media (max-width: 900px){
+    .calc-result{position:static !important;}
+    .cmp3{grid-template-columns:1fr 1fr;}
+    .cmp3-card .cv{font-size:14.5px;}
     .country-switch{padding-right:7px;margin-right:0;}
     .cs-btn{height:30px;padding:0 9px;font-size:11.5px;}
     .cs-sub{display:none;}
@@ -1120,31 +1128,31 @@
           <th scope="row" class="row-h">2.5mg<br /><span style="font-weight:600;color:#71767f;font-size:10.5px">1개월</span></th>
           <td><span class="big">30만~35만 원</span><span class="sub">4펜 상자 (공급가 27.8만)</span></td>
           <td><span class="big win">약 6.5만 원</span><span class="sub">324.12위안 · 1펜(4주)</span></td>
-          <td><span class="big">약 15만 원</span><span class="sub">중앙값 ¥17,600 · 4본</span></td>
+          <td><span class="big">6.7만~22.9만 원</span><span class="sub">8,000~27,500엔 · 4본</span></td>
         </tr>
         <tr>
           <th scope="row" class="row-h">5mg<br /><span style="font-weight:600;color:#71767f;font-size:10.5px">1개월</span></th>
           <td><span class="big">37만~42만 원</span><span class="sub">4펜 상자 (공급가 36.9만)</span></td>
           <td><span class="big win">약 11만 원</span><span class="sub">551.00위안 · 1펜(4주)</span></td>
-          <td><span class="big">약 29만 원</span><span class="sub">중앙값 ¥34,000 · 4본</span></td>
+          <td><span class="big">11.7만~40.9만 원</span><span class="sub">14,000~49,000엔 · 4본</span></td>
         </tr>
         <tr>
           <th scope="row" class="row-h">7.5mg<br /><span style="font-weight:600;color:#71767f;font-size:10.5px">1개월</span></th>
           <td><span class="big">52만~60만 원</span><span class="sub">4펜 상자 (공급가 52.1만)</span></td>
           <td><span class="big win">약 15만 원</span><span class="sub">751.55위안 · 1펜(4주)</span></td>
-          <td><span class="big">약 36만 원</span><span class="sub">중앙값 ¥42,400 · 4본</span></td>
+          <td><span class="big">18.3만~50.9만 원</span><span class="sub">22,000~61,000엔 · 4본</span></td>
         </tr>
         <tr>
           <th scope="row" class="row-h">10mg<br /><span style="font-weight:600;color:#71767f;font-size:10.5px">1개월</span></th>
           <td><span class="big">52만~60만 원</span><span class="sub">4펜 상자 (공급가 52.1만)</span></td>
           <td><span class="big win">약 18.7만 원</span><span class="sub">936.70위안 · 1펜(4주)</span></td>
-          <td><span class="big">약 43만 원</span><span class="sub">중앙값 ¥51,200 · 4본</span></td>
+          <td><span class="big">29.4만~55.0만 원</span><span class="sub">35,200~66,000엔 · 4본</span></td>
         </tr>
         <tr>
           <th scope="row" class="row-h">12.5 · 15mg</th>
           <td>있음 (2026-06 출시)</td>
           <td><b>없음 (미출시)</b><br /><span class="sub">최대 10mg까지</span></td>
-          <td>있음<br /><span class="sub">¥57,800 / ¥76,700 중앙값</span></td>
+          <td>있음<br /><span class="sub">48,000~56,000엔 · 4본</span></td>
         </tr>
         <tr>
           <th scope="row" class="row-h">처방 기준</th>
@@ -1192,7 +1200,7 @@
     </table>
   </div>
   <p class="cmp-notes">
-    <b>환율 가정</b> 1위안 ≈ 200원, 100엔 ≈ 834원 (2026-11-16 수출입은행 매매기준율). <b>한국</b>은 공급가(4펜)와 실제 판매가 범위, <b>중국</b>은 2026-01~ 국가의보 협상가 1펜 기준, <b>일본</b>은 2026-10-17~25 각 클리닉 공식 페이지 30곳 조사 <b>중앙값</b>입니다. 일본은 2.5mg 4본을 ¥8,000대에 파는 곳도 있어 편차가 큽니다. <b>일본에서 마운자로의 승인 적응증은 2형 당뇨병뿐</b>이고, 클리닉이 다이어트 목적으로 처방하는 것은 적응증 밖 자유진료입니다(비만 적응증은 젭바운드로 승인). 모든 가격은 참고값이며, 실제 결제액은 진찰료·검사비·환율에 따라 달라집니다.
+    <b>환율 가정</b> 1위안 ≈ 200원, 100엔 ≈ 834원 (2026-11-16 수출입은행 매매기준율). <b>한국</b>은 공급가(4펜)와 실제 판매가 범위, <b>중국</b>은 2026-01~ 국가의보 협상가 1펜 기준, <b>일본</b>은 이 페이지에 수록한 클리닉 11곳의 <b>공식 가격표</b>(2026-11-16 확인)에서 4본 기준 <b>최저~최고</b>입니다. 자유진료라 같은 도시에서도 3배 넘게 벌어집니다. <b>일본에서 마운자로의 승인 적응증은 2형 당뇨병뿐</b>이고, 클리닉이 다이어트 목적으로 처방하는 것은 적응증 밖 자유진료입니다(비만 적응증은 젭바운드로 승인). 모든 가격은 참고값이며, 실제 결제액은 진찰료·검사비·환율에 따라 달라집니다.
   </p>
   <div class="pick-grid">
     <div class="pick">
@@ -2651,14 +2659,16 @@
     confirmed: "클리닉 공식 가격표나 전화로 확인이 끝난 곳",
     korean: "한국어·영어 문진표나 응대가 확인된 곳",
     lowprice: "2.5mg 4본이 2만 엔 이하인 곳(일본)",
-    daytrip: "1시간~1시간 40분 비행으로 당일 왕복이 가능한 곳",
+    daytrip: "짧은 비행으로 하루 안에 다녀올 수 있는 곳(도쿄·오사카·후쿠오카)",
     planb: "병원에서 1펜만 받았을 때 추가 구매하는 약국(중국)"
   };
 
   function renderFilters() {
     var wrap = document.getElementById("filters");
     var cityList = HOSPITALS.filter(function (h) { return inCountry(h) && (state.city === "all" || h.city === state.city); });
-    wrap.innerHTML = FILTERS.map(function (f) {
+    wrap.innerHTML = FILTERS.filter(function (f) {
+      return f.key === "all" || f.key === state.filter || cityList.filter(f.test).length > 0;
+    }).map(function (f) {
       var n = cityList.filter(f.test).length;
       return '<button type="button" class="fchip" data-filter="' + f.key + '" title="' + (FILTER_HINTS[f.key] || "") + '" aria-pressed="' +
         (f.key === state.filter ? "true" : "false") + '">' + f.label + ' <span class="n">' + n + "</span></button>";
@@ -3071,7 +3081,6 @@
   var ROUTES_CN = {
     ICN: [
       { city: "칭다오", price: 152000, note: "직항 1시간 30분" },
-      { city: "옌타이", price: 143000, note: "직항 · 약국 구매 후기" },
       { city: "다롄", price: 204000, note: "직항" },
       { city: "선양", price: 231000, note: "직항" },
       { city: "베이징", price: 256000, note: "직항" },
@@ -3116,6 +3125,7 @@
     ]
   };
 
+  var DOSE_ORDER = ["2.5", "5", "7.5", "10"];
   var DOSES = {
     "2.5": { cn: 324.12, kr: 320000 },
     "5":   { cn: 551.00, kr: 410000 },
@@ -3197,9 +3207,11 @@
     }
     var diff = krTotal - row.total;
     var cls = row.total === bestTotal ? " best" : "";
+    var sub = row.country === "kr" ? "비교 기준 (항공·진찰 없음)"
+      : (diff >= 0 ? "국내보다 " + man(diff) + " 저렴" : "국내보다 " + man(-diff) + " 비쌈");
     return '<div class="cmp3-card' + cls + '"><div class="ck">' + k + '</div>' +
       '<div class="cv">' + won(row.total) + '</div>' +
-      '<div class="cs">' + row.label + ' · ' + (diff >= 0 ? "국내보다 " + man(diff) + " 저렴" : "국내보다 " + man(-diff) + " 비쌈") + '</div></div>';
+      '<div class="cs">' + row.label + ' · ' + sub + '</div></div>';
   }
 
   function updateCalc() {
@@ -3239,7 +3251,8 @@
           "<td>" + (r.exam ? man(r.exam) : "0") + "</td>" +
           "<td>" + man(r.drug) + "</td>" +
           '<td class="tot">' + man(r.total) + "</td>" +
-          '<td class="' + (diff > 0 ? "minus" : "plus") + '">' + (diff > 0 ? "−" : "+") + man(Math.abs(diff)) + "</td></tr>";
+          '<td class="' + (r.country === "kr" ? "" : (diff > 0 ? "minus" : "plus")) + '">' +
+          (r.country === "kr" ? "—" : (diff > 0 ? "−" : "+") + man(Math.abs(diff))) + "</td></tr>";
       }).join("") + "</tbody>";
 
     penHintEl.textContent = "일본 " + (calc.months * 4) + "본 · 중국 " + calc.months + "펜 · 세관 한도 3개월(12개)";
@@ -3247,7 +3260,7 @@
   }
 
   function buildKrQuick() {
-    krQuickEl.innerHTML = Object.keys(DOSES).map(function (k) {
+    krQuickEl.innerHTML = DOSE_ORDER.map(function (k) {
       return '<button type="button" data-kr="' + k + '">' + k + "mg " + man(DOSES[k].kr) + "</button>";
     }).join("");
   }
