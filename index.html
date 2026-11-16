@@ -2824,6 +2824,9 @@
     });
     syncCountryChrome();
     buildTabs(); renderFilters(); renderCards(); renderMap();
+    if (c === "kr" && krPanelEl && krPanelEl.scrollIntoView) {
+      window.setTimeout(function () { krPanelEl.scrollIntoView({ block: "start", behavior: "smooth" }); }, 60);
+    }
   });
 
   document.getElementById("filters").addEventListener("click", function (e) {
