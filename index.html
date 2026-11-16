@@ -849,9 +849,9 @@
   .cmp3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:2px;}
   .cmp3-card{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff;}
   .cmp3-card.best{border-color:#0e7a55;box-shadow:0 0 0 1px #0e7a55 inset;}
-  .cmp3-card .ck{font-size:11px;font-weight:800;color:var(--muted);display:flex;align-items:center;gap:4px;}
+  .cmp3-card .ck{font-size:11px;font-weight:800;color:var(--muted);display:flex;align-items:center;gap:4px;white-space:nowrap;}
   .cmp3-card .cv{font-size:16.5px;font-weight:800;letter-spacing:-.03em;margin:3px 0 1px;}
-  .cmp3-card .cs{font-size:10.5px;color:var(--muted);line-height:1.4;}
+  .cmp3-card .cs{font-size:10.5px;color:var(--muted);line-height:1.4;word-break:keep-all;}
   .opt-table{width:100%;border-collapse:collapse;font-size:11.8px;margin-top:6px;}
   .opt-table th,.opt-table td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap;}
   .opt-table th:first-child,.opt-table td:first-child{text-align:left;white-space:normal;}
@@ -860,6 +860,14 @@
   .opt-table .tot{font-weight:800;}
   .opt-table .minus{color:#0e7a55;font-weight:800;}
   .opt-table .plus{color:#b1252b;font-weight:800;}
+  .calc-help{
+    grid-column:1/-1;font-size:11.5px;line-height:1.6;color:var(--ink-2);
+    background:#fbfaf7;border:1px solid var(--line);border-radius:11px;padding:10px 12px;
+  }
+  .calc-help b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+  .calc-help ul{margin:0;padding-left:14px;}
+  .calc-help li{margin-bottom:2px;}
+  .calc-help li b{display:inline;font-size:inherit;letter-spacing:0;text-transform:none;color:var(--ink);}
 
   @media (max-width: 900px){
     .calc-result{position:static !important;}
@@ -1560,6 +1568,15 @@
           <div class="quick" id="krQuick"></div>
         </div>
 
+        <div class="calc-help">
+          <b>읽는 법</b>
+          <ul>
+            <li>항공은 <b>왕복 직항 최저가</b>입니다. 김포→하네다처럼 대형기만 뜨는 노선은 값이 크게 뜁니다.</li>
+            <li>약값은 일본 <b>4본(1개월)</b>, 중국 <b>1펜(4주)</b>을 한 달로 맞춰 계산합니다.</li>
+            <li>한국은 <b>약값만</b>입니다(진찰·검사 별도). 일본·중국은 진찰료를 넣었습니다.</li>
+            <li>세관 한도는 <b>3개월(일본 12본 · 중국 3펜)</b>이라 3개월을 넘기면 나눠 다녀와야 합니다.</li>
+          </ul>
+        </div>
         <button class="calc-reset" type="button" id="calcReset">기본값으로 되돌리기</button>
       </div>
 
@@ -3207,8 +3224,8 @@
     }
     var diff = krTotal - row.total;
     var cls = row.total === bestTotal ? " best" : "";
-    var sub = row.country === "kr" ? "비교 기준 (항공·진찰 없음)"
-      : (diff >= 0 ? "국내보다 " + man(diff) + " 저렴" : "국내보다 " + man(-diff) + " 비쌈");
+    var sub = row.country === "kr" ? "비교 기준 · 항공·진찰 없음"
+      : "국내 대비 " + (diff >= 0 ? "−" : "+") + man(Math.abs(diff));
     return '<div class="cmp3-card' + cls + '"><div class="ck">' + k + '</div>' +
       '<div class="cv">' + won(row.total) + '</div>' +
       '<div class="cs">' + row.label + ' · ' + sub + '</div></div>';
