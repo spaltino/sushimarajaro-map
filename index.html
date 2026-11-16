@@ -2927,6 +2927,10 @@
    * 전체 보기에서 도시 배지가 겹치지 않도록 화면 픽셀 기준으로 자리를 밀어 준다.
    * 배지는 실제 좌표에 점으로 남기고, 밀린 만큼 얇은 지시선으로 이어 준다.
    */
+  /* 상하이·항저우·닝보가 몰린 장강 삼각주는 미리 방향을 잡아 부채꼴로 펼친다 */
+  var CLUSTER_BIAS = {
+    shanghai: [26, -16], hangzhou: [-44, 10], ningbo: [16, 34]
+  };
   var clusterMarkers = {};
   var leaderLayer = null;
   if (map) {
@@ -2954,8 +2958,9 @@
       var w = inner ? inner.offsetWidth : 46;
       var h = inner ? inner.offsetHeight : 62;
       var r = el.getBoundingClientRect();
+      var bias = CLUSTER_BIAS[city] || [0, 0];
       items.push({
-        city: city, w: w, h: h, dx: 0, dy: 0,
+        city: city, w: w, h: h, dx: bias[0], dy: bias[1],
         ax: r.left - mapRect.left, ay: r.top - mapRect.top
       });
     });
@@ -3002,11 +3007,11 @@
       var to = L.point(it.ax + it.dx, it.ay + it.dy);
       L.polyline([map.containerPointToLatLng(from), map.containerPointToLatLng(to)], {
         pane: "overlayPane", interactive: false,
-        color: "#191b1f", weight: 1.1, opacity: 0.3, dashArray: "2 3"
+        color: "#191b1f", weight: 1.2, opacity: 0.34, dashArray: "2 3"
       }).addTo(leaderLayer);
       L.circleMarker(map.containerPointToLatLng(from), {
         pane: "overlayPane", interactive: false,
-        radius: 3, stroke: false, fillColor: "#191b1f", fillOpacity: 0.38
+        radius: 3.4, stroke: false, fillColor: "#191b1f", fillOpacity: 0.42
       }).addTo(leaderLayer);
     });
   }
@@ -3708,11 +3713,11 @@
     var condTxt = AIRPORTS[calc.airport].label + " 출발 · " + calc.dose + "mg · " + m + "개월";
     el.className = "insight" + (save > 0 ? " win" : " lose");
     if (save > 0) {
-      lineEl.innerHTML = cur.flag + " <b>" + cur.label + "</b> 원정이 한국보다 <b>" + man(save) + "원</b> 쌈";
+      lineEl.innerHTML = cur.flag + " <b>" + cur.label + "</b> 원정이 한국보다 <b>" + man(save) + " 원</b> 쌉니다";
       subEl.textContent = (firstWin ? (firstWin === 1 ? "1개월부터 원정이 이득" : firstWin + "개월부터 원정이 이득") + " · " : "") +
         "손익분기 " + beTxt + " · " + condTxt;
     } else {
-      lineEl.innerHTML = "이 조건에서는 🇰🇷 한국 처방이 <b>" + man(-save) + "원</b> 더 쌈";
+      lineEl.innerHTML = "이 조건에서는 🇰🇷 한국 처방이 <b>" + man(-save) + " 원</b> 더 쌉니다";
       subEl.textContent = (firstWin ? firstWin + "개월부터 원정이 이득 · " : "3개월까지는 원정이 손해 · ") +
         "손익분기 " + beTxt + " · " + condTxt;
     }
