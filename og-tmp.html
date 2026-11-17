@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>og-image</title>
+<style>
+  @page { margin: 0; }
+  html,body{margin:0;padding:0;background:#f4f1ea;}
+  .card{
+    position:relative;width:1200px;height:630px;overflow:hidden;
+    background:#fdfcf9;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  }
+  .band{position:absolute;left:0;top:0;width:100%;height:9px;background:#d9482f;}
+  .blob{position:absolute;right:-120px;top:-60px;width:640px;height:640px;border-radius:50%;background:#f6ece2;}
+  .blob2{position:absolute;right:60px;bottom:-260px;width:420px;height:420px;border-radius:50%;background:#f8f2e8;}
+  .inner{position:relative;padding:64px 68px 0;}
+  .kicker{font-size:17px;letter-spacing:.28em;font-weight:800;color:#d9482f;margin:18px 0 26px;}
+  h1{margin:0;font-size:82px;line-height:1.02;letter-spacing:-.035em;color:#16181d;font-weight:900;}
+  .sub{margin:22px 0 6px;font-size:29px;color:#3f444c;font-weight:700;letter-spacing:-.02em;}
+  .sub2{margin:0;font-size:19px;color:#71767f;letter-spacing:-.01em;}
+  .stats{display:flex;gap:22px;margin-top:44px;}
+  .stat{width:308px;background:#fff;border:1px solid #e8e2d6;border-radius:16px;padding:16px 20px 18px;box-shadow:0 1px 0 #efeae0;}
+  .tag{display:inline-block;font-size:13px;font-weight:800;color:#fff;background:#1c7a53;border-radius:6px;padding:3px 8px;letter-spacing:.04em;}
+  .tag.cn{background:#d9482f;}
+  .tag.kr{background:#71767f;}
+  .num{margin:12px 0 4px;font-size:37px;font-weight:900;color:#16181d;letter-spacing:-.03em;}
+  .desc{font-size:15.5px;color:#71767f;letter-spacing:-.01em;}
+  .foot{position:absolute;left:68px;right:68px;bottom:40px;display:flex;justify-content:space-between;
+        border-top:1px solid #e5dfd2;padding-top:16px;font-size:18px;color:#5c6069;letter-spacing:-.01em;}
+</style>
+</head>
+<body>
+<div class="card" id="og">
+  <div class="band"></div>
+  <div class="blob"></div>
+  <div class="blob2"></div>
+  <div class="inner">
+    <div class="kicker">SUSHI MALA JARO MAP</div>
+    <h1>스시마라자로 맵</h1>
+    <p class="sub">일본 · 중국 마운자로 원정 총정리</p>
+    <p class="sub2">가격 · 공항 동선 · 세관 한도 · 실전 회화까지 한 페이지에</p>
+    <div class="stats">
+      <div class="stat">
+        <span class="tag">JP</span>
+        <div class="num">일본 20곳</div>
+        <div class="desc">도쿄 · 오사카 · 후쿠오카 · 나고야<br />삿포로 · 오키나와</div>
+      </div>
+      <div class="stat">
+        <span class="tag cn">CN</span>
+        <div class="num">중국 20곳</div>
+        <div class="desc">상하이 · 칭다오 · 닝보 등 9개 도시</div>
+      </div>
+      <div class="stat">
+        <span class="tag kr">KR</span>
+        <div class="num">세관 12개 · 3개월</div>
+        <div class="desc">2026-11-12 시행 휴대 반입 기준</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>spaltino.github.io/sushimarajaro-map</span><span>기준 2026-11-17</span></div>
+</div>
+</body>
+</html>
