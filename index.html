@@ -1010,6 +1010,57 @@
   .faq-body li{margin-bottom:3px;}
   .faq-body b{color:var(--ink);}
 
+  /* ---------- 릴레이 동선 (상하이 3곳 · 대마도) ---------- */
+  .relay{display:flex;flex-direction:column;}
+  .rstep{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;align-items:flex-start;}
+  .rwhen{font-variant-numeric:tabular-nums;font-weight:800;font-size:13px;color:var(--ink);padding-top:11px;letter-spacing:-.02em;}
+  .rwhen small{display:block;font-weight:600;font-size:10px;color:var(--muted);margin-top:1px;letter-spacing:-.01em;white-space:nowrap;}
+  .rbody{border:1px solid var(--line);border-radius:13px;background:var(--surface);box-shadow:var(--shadow-sm);padding:12px 14px;min-width:0;}
+  .rbody.hot{border-color:rgba(217,72,47,.32);background:linear-gradient(135deg,#fff8f5,#fffdfc);}
+  .rtop{display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+  .rbody h3{font-size:13.5px;font-weight:800;letter-spacing:-.025em;line-height:1.35;}
+  .rbadge{flex:none;display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:6px;background:#efede8;color:var(--ink-2);font-size:10px;font-weight:800;letter-spacing:-.01em;}
+  .rbadge.no{border-radius:50%;min-width:21px;height:21px;padding:0;background:var(--accent);color:#fff;font-size:11px;}
+  .rbody .raddr{font-size:11px;color:var(--muted);margin-top:3px;letter-spacing:-.01em;line-height:1.5;}
+  .rline{font-size:12px;color:var(--ink-2);line-height:1.62;margin-top:6px;letter-spacing:-.01em;}
+  .rline b{color:var(--ink);font-weight:800;}
+  .rtags{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px;}
+  .rtags .chip{font-size:10px;padding:2px 7px;}
+  .rleg{display:flex;align-items:center;gap:7px;margin:6px 0 6px 74px;padding:5px 10px;border-radius:8px;background:#fbf7ee;color:#8a6a2a;font-size:11.5px;font-weight:700;letter-spacing:-.01em;}
+  .relay-note{margin-top:14px;border:1px solid var(--line);border-radius:13px;background:#fbfaf7;padding:13px 15px;}
+  .relay-note .rn-k{font-size:10.5px;font-weight:800;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;}
+  .relay-note ul{margin:7px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:5px;}
+  .relay-note li{font-size:12px;color:var(--ink-2);line-height:1.62;letter-spacing:-.01em;}
+  .relay-note li b{color:var(--ink);font-weight:800;}
+
+  /* ---------- 외배처방 백업 ---------- */
+  .pharm{margin-top:18px;border:1px solid rgba(91,33,182,.18);border-radius:16px;background:linear-gradient(135deg,#faf7ff,#fdfcff);padding:16px 18px;}
+  .pharm-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;letter-spacing:-.025em;color:#4c1d95;}
+  .pharm-head .ico{font-size:16px;}
+  .pharm-sub{margin-top:6px;font-size:12px;color:#5b5570;line-height:1.6;letter-spacing:-.01em;}
+  .pharm-sub b{color:#3b1d70;font-weight:800;}
+  .pharm-steps{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .pharm-steps > li{background:#fff;border:1px solid rgba(91,33,182,.14);border-radius:12px;padding:11px 13px;}
+  .ph-k{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;letter-spacing:-.02em;color:var(--ink);}
+  .ph-k .n{width:18px;height:18px;border-radius:6px;background:#f1ebfd;color:#5b21b6;display:grid;place-items:center;font-size:10px;font-weight:800;flex:none;}
+  .pharm-steps p{margin-top:6px;font-size:11.8px;color:var(--ink-2);line-height:1.62;letter-spacing:-.01em;}
+  .pharm-steps ul{margin:7px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:4px;}
+  .pharm-steps ul li{font-size:11.8px;color:var(--ink-2);line-height:1.58;letter-spacing:-.01em;}
+  .pharm-steps ul li b{color:var(--ink);font-weight:800;}
+  .pharm-steps code{background:#f4f1fb;color:#4c1d95;border-radius:5px;padding:1px 5px;font-size:11px;font-weight:800;white-space:nowrap;}
+  .rx{margin-top:8px;border:1px dashed #cbb9f5;border-radius:11px;background:#fdfbff;padding:10px 12px;}
+  .rx-cn{font-size:17px;font-weight:800;line-height:1.5;color:#3b1d70;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:-.01em;}
+  .rx-pron{margin-top:5px;font-size:11px;color:#7c7392;letter-spacing:-.01em;line-height:1.5;}
+  .rx-ko{margin-top:3px;font-size:11.8px;color:#5b5570;letter-spacing:-.01em;}
+  .rx-acts{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap;}
+  .ph-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:11.5px;}
+  .ph-table th,.ph-table td{padding:6px 8px;border-bottom:1px solid #ece7f7;text-align:left;vertical-align:top;letter-spacing:-.01em;line-height:1.5;}
+  .ph-table th{width:56px;font-size:10.5px;font-weight:800;color:#7c7392;white-space:nowrap;}
+  .ph-table td{color:var(--ink-2);}
+  .ph-table td b{color:var(--ink);font-weight:800;}
+  .ph-table tr:last-child th,.ph-table tr:last-child td{border-bottom:none;}
+  .ts-price{max-width:620px;}
+
   @media (max-width: 900px){
     /* 상단 탭: 국가 스위처 1단 + 도시 탭 가로 스크롤 2단 */
     html{scroll-padding-top:132px;}
@@ -1064,6 +1115,16 @@
     .opt-table th,.opt-table td{padding:5px 4px;}
 
     .pen-grid,.vs-grid{grid-template-columns:1fr;}
+    .rstep{grid-template-columns:50px minmax(0,1fr);gap:9px;}
+    .rwhen{font-size:12px;padding-top:12px;}
+    .rwhen small{font-size:9.5px;}
+    .rbody{padding:11px 12px;}
+    .rbody h3{font-size:13px;}
+    .rleg{margin-left:59px;font-size:11px;padding:5px 8px;}
+    .pharm{padding:14px;}
+    .rx-cn{font-size:15px;}
+    .ph-table{font-size:11px;}
+    .ph-table th{width:48px;font-size:10px;}
     .faq-item summary{font-size:12.5px;padding:12px 13px;gap:8px;}
     .faq-item .faq-body{padding:0 13px 13px 46px;font-size:12px;line-height:1.68;}
     .faq-item .q{width:22px;height:18px;font-size:9px;}
@@ -1112,7 +1173,7 @@
     <div class="hero-copy">
       <span class="hero-kicker">2026-11-17 확인 기준 · 🇯🇵 일본 28곳 + 🇨🇳 중국 21곳</span>
       <h2>마운자로, 일본과 중국 어디서 받을까</h2>
-      <p>도쿄·오사카·교토·후쿠오카·나고야·삿포로·오키나와 28곳과 중국 9개 도시 21곳을 한 지도에. 펜 구조 차이부터 세관 12개 한도, 공항 동선, 일본어·중국어 실전 회화까지.</p>
+      <p>도쿄·오사카·교토·후쿠오카·나고야·삿포로·오키나와 28곳과 중국 9개 도시 21곳을 한 지도에. 펜 구조 차이부터 세관 12개 한도, 공항 동선, <b>상하이 3곳 릴레이 동선</b>, <b>대마도 배송 루트</b>, 일본어·중국어 실전 회화까지.</p>
     </div>
     <button class="share-btn" id="shareBtn" type="button">🔗 링크 공유</button>
   </div>
@@ -1481,6 +1542,110 @@
   </p>
 </section>
 
+<!-- ══════════ 대마도 루트 ══════════ -->
+<section class="section" id="tsushima">
+  <div class="sec-head">
+    <span class="sec-kicker">Tsushima · Busan → Hitakatsu</span>
+    <h2>대마도로 받는 길 — 배 타고 1시간, 온라인 진료 + 숙소 배송</h2>
+    <p>대마도 안에서 마운자로를 처방하는 병원은 <b>확인되지 않았습니다</b>. 대신 후쿠오카 <b>폰타나 클리닉</b>이 온라인 진료 후 대마도 숙소나 야마토 운수 영업소로 보내 줍니다. 부산에서 배로 <b>1시간 남짓</b>이라, 비행기 없이 다녀오는 단기 원정 대안이 됩니다. <b>폰타나 클리닉 공식 안내 기준(2026-11-17 확인)</b>입니다.</p>
+  </div>
+
+  <div class="keyfacts">
+    <div class="keyfact"><div class="k">배송비·처방전</div><div class="v">2,500<small>엔</small></div></div>
+    <div class="keyfact"><div class="k">배송 기간</div><div class="v">2~3<small>일</small></div></div>
+    <div class="keyfact"><div class="k">진료 마감 권장</div><div class="v">방문 7<small>일 전</small></div></div>
+    <div class="keyfact"><div class="k">부산 → 히타카츠</div><div class="v">1시간<small>10~30분</small></div></div>
+  </div>
+
+  <div class="relay">
+    <div class="rstep">
+      <div class="rwhen"><b>STEP 1</b><small>출발 8일 전</small></div>
+      <div class="rbody">
+        <div class="rtop"><h3>공식 예약 사이트에서 온라인 진료 예약</h3></div>
+        <p class="rline">진료 희망일과 대마도 체류 일정을 적고 문진표를 냅니다. 한국어 상담은 카카오톡 <b>fontanaclinic</b>.</p>
+      </div>
+    </div>
+    <div class="rstep">
+      <div class="rwhen"><b>STEP 2</b><small>방문 7일 전</small></div>
+      <div class="rbody">
+        <div class="rtop"><h3>한국에서 온라인 진료</h3></div>
+        <p class="rline">일본에 가기 전에 받는 것이 핵심입니다. 이때 <b>배송지(대마도 숙소 또는 야마토 영업소)</b>와 <b>희망 수령일</b>을 함께 전달하세요.</p>
+      </div>
+    </div>
+    <div class="rstep">
+      <div class="rwhen"><b>STEP 3</b><small>진료 직후</small></div>
+      <div class="rbody">
+        <div class="rtop"><h3>결제 — 약값 + 2,500엔</h3></div>
+        <p class="rline">2,500엔에 <b>일본 국내 배송비</b>와 <b>일본어·영어 병기 처방전 발급비</b>가 포함됩니다. 온라인 진료는 신용카드 결제입니다.</p>
+      </div>
+    </div>
+    <div class="rstep">
+      <div class="rwhen"><b>STEP 4</b><small>2~3일</small></div>
+      <div class="rbody">
+        <div class="rtop"><h3>냉장 택배로 대마도 배송</h3></div>
+        <p class="rline">보통 <b>2~3일</b>. 날씨·교통·재고 상황에 따라 늦어질 수 있어, 원하는 날짜 도착을 보장하지는 않습니다.</p>
+      </div>
+    </div>
+    <div class="rstep">
+      <div class="rwhen"><b>STEP 5</b><small>대마도 도착</small></div>
+      <div class="rbody hot">
+        <div class="rtop"><span class="rbadge no">✓</span><h3>숙소 또는 야마토 운수 영업소에서 수령</h3></div>
+        <p class="rline">프런트가 있는 호텔은 숙소 수령이 됩니다. <b>에어비앤비·민박</b>은 택배를 받아 줄 직원이 없어 <b>야마토 운수 영업소</b>를 지정해야 합니다. 수령 시 <b>여권</b>을 챙기세요.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="relay-note">
+    <div class="rn-k">배편 · 부산 ↔ 히타카츠</div>
+    <ul>
+      <li><b>팬스타 쓰시마링크</b> 부산 08:40 → 히타카츠 약 <b>1시간 10분</b> · <b>씨플라워</b>(대아고속해운) 부산 09:40 → 히타카츠 11:10(약 1시간 30분). 운항일과 항구는 날짜마다 다릅니다.</li>
+      <li>히타카츠 체류는 시간표 기준 <b>약 4시간 30분</b>(토요일 약 6시간 20분). 입국심사·승선 수속 시간은 빼고 계산한 값입니다.</li>
+      <li>겨울에는 출항 시각이 바뀌고 결항하는 날이 있습니다. 예약 전 선사 공지로 다시 확인하세요.</li>
+    </ul>
+  </div>
+
+  <div class="warn-band" style="margin-top:16px">
+    <div class="warn-head"><span class="ico" aria-hidden="true">⚠️</span> 대마도 루트에서 걸리는 세 가지</div>
+    <div class="warn-grid">
+      <div class="warn-card">
+        <div class="k">1 · 숙소</div>
+        <div class="v">에어비앤비·민박은 불가</div>
+        <div class="s">프런트가 없어 냉장 택배를 받아 줄 수 없습니다. <b>야마토 운수 영업소</b>(히타카츠는 항구에서 약 2km, 미쓰시마는 이즈하라항에서 약 11km)를 수령처로 지정하고, <b>영업소 이름·주소·영업소 코드</b>를 클리닉에 알려 주세요.</div>
+      </div>
+      <div class="warn-card">
+        <div class="k">2 · 반입</div>
+        <div class="v">한국 주소로는 배송 불가</div>
+        <div class="s">일본 국내 배송만 됩니다. 대마도에서 받은 약은 <b>본인이 직접 휴대</b>해 입국해야 하고, 6개를 넘으면 용법상 <b>3개월분(12개)</b>까지입니다.</div>
+      </div>
+      <div class="warn-card">
+        <div class="k">3 · 보관</div>
+        <div class="v">영업소 보관은 3일</div>
+        <div class="s">냉장 택배는 영업소에서 <b>3일</b>만 맡아 주고 지나면 반송됩니다. 배가 결항하면 그대로 넘길 수 있으니 날짜에 여유를 두세요. 편의점·무인 택배함은 냉장 수령이 안 됩니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relay-note">
+    <div class="rn-k">비용 예시 · 온라인 진료(2,500엔 포함)</div>
+    <table class="price-table ts-price">
+      <thead><tr><th>용량</th><th>1개월분</th><th>3개월분</th><th>6개월분</th></tr></thead>
+      <tbody>
+        <tr><td>2.5mg</td><td class="cn">18,300엔</td><td class="cn">48,700엔</td><td class="cn">92,500엔</td></tr>
+        <tr><td>5mg</td><td class="cn">27,900엔</td><td class="cn">74,500엔</td><td class="cn">143,500엔</td></tr>
+        <tr><td>7.5mg</td><td class="cn">43,100엔</td><td class="cn">118,600엔</td><td class="cn">233,500엔</td></tr>
+        <tr><td>10mg</td><td class="cn">51,400엔</td><td class="cn">142,000엔</td><td class="cn">280,900엔</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>2.5mg 3개월이 <b>48,700엔 ≈ 40.6만 원</b>(100엔 834원 기준). 12.5mg·15mg는 1개월 62,500·70,800엔입니다.</li>
+      <li>최대 <b>6개월분</b>까지 처방하지만, 실제 수량은 진료 후 의사 판단과 재고에 따릅니다. 일본에서의 처방량과 한국 반입량은 다릅니다.</li>
+      <li>진찰료(초진·재진)는 <b>0엔</b>, 보냉백·아이스팩은 1인 1개 무료입니다. 근처 날짜 예약은 이미 찼을 수 있어 일정이 정해지면 바로 잡으세요.</li>
+    </ul>
+  </div>
+
+  <p class="cmp-notes">출처 — FONTANA CLINIC 대마도 안내(<a href="https://fontana-clinic.jp/kr-tsushima-mounjaro/" target="_blank" rel="noopener">kr-tsushima-mounjaro</a>)·수령 방법 가이드(<a href="https://fontana-clinic.jp/kr-mounjaro-pickup-guide/" target="_blank" rel="noopener">kr-mounjaro-pickup-guide</a>) 2026-11-17 확인. 배편 시각·소요는 부산항여객터미널 선석 안내와 선사 시간표 기준이며, 대마도 현지 병원의 마운자로 처방은 확인되지 않았습니다.</p>
+</section>
+
 <!-- ══════════ 공항 → 병원 ══════════ -->
 <section class="section" id="routes">
   <div class="sec-head">
@@ -1672,6 +1837,121 @@
     </table>
   </div>
   <p class="cmp-notes"><b>주의</b> 노선·환승은 2026-11-17 확인 기준입니다. 당일 첫차·막차와 출입구 위치는 <b>高德(Amap)·百度地圖</b>로 다시 확인하세요. 공항에서 병원까지 택시는 도시별 30~80분(3~110위안)입니다.</p>
+</section>
+
+<!-- ══════════ 상하이 3곳 릴레이 ══════════ -->
+<section class="section" id="shanghai-relay">
+  <div class="sec-head">
+    <span class="sec-kicker">Shanghai · 3-Clinic Relay</span>
+    <h2>상하이 3곳 릴레이 — 런지 → 동방 → 공리, 하루에 3펜</h2>
+    <p>상하이 공립병원은 처방 1건당 <b>1펜</b>이 상한이라, 3펜을 채우려면 병원을 세 곳 도는 방법뿐입니다. 핵심인 <b>런지병원 국제의료부를 오전에 먼저</b> 잡고, 오후에 동방·공리를 도는 순서가 가장 안전합니다. <b>2026-11-26(목)</b> 기준 구글 지도 실측 동선입니다.</p>
+  </div>
+
+  <div class="keyfacts">
+    <div class="keyfact"><div class="k">하루 방문</div><div class="v">3<small>곳 · 최대 3펜</small></div></div>
+    <div class="keyfact"><div class="k">진찰료 합계</div><div class="v">558<small>위안</small></div></div>
+    <div class="keyfact"><div class="k">택시 이동</div><div class="v">4<small>회 · 82.6km</small></div></div>
+    <div class="keyfact"><div class="k">공항 복귀</div><div class="v">17:00<small>경 (20:10편)</small></div></div>
+  </div>
+
+  <div class="relay">
+    <div class="rstep">
+      <div class="rwhen"><b>09:40</b><small>푸동공항 T2</small></div>
+      <div class="rbody">
+        <div class="rtop"><span class="rbadge">출발</span><h3>공항 → 런지병원 동원</h3></div>
+        <p class="rline">08:25 착륙(춘추 <b>9C8574</b>) 후 입국심사·수하물. 캐리어는 공항 보관소에 맡기고 택시로 바로 움직입니다. 택시는 <b>알리페이 안의 디디</b>가 편합니다.</p>
+      </div>
+    </div>
+    <div class="rleg">🚕 택시 36.2km · 약 36분</div>
+    <div class="rstep">
+      <div class="rwhen"><b>10:20</b><small>~13:00</small></div>
+      <div class="rbody hot">
+        <div class="rtop"><span class="rbadge no">1</span><h3>런지병원 동원 국제의료부</h3></div>
+        <p class="raddr">上海市浦东新区浦建路160号 · 지하철 4호선 塘桥역 2출구 456m · 6호선 儿童医学中心역 3출구 497m</p>
+        <p class="rline"><b>12:15 내분비과 예약</b>(확정 회신 대기) · 진찰료 <b>508위안</b> · 영어 진료 · 5mg 원내 재고 있음 · <b>1회 1펜</b></p>
+        <div class="rtags"><span class="chip city">3급 갑등</span><span class="chip">영어 진료</span><span class="chip">1펜</span></div>
+      </div>
+    </div>
+    <div class="rleg">🚕 택시 5.0km · 약 13분</div>
+    <div class="rstep">
+      <div class="rwhen"><b>13:18</b><small>~14:30</small></div>
+      <div class="rbody">
+        <div class="rtop"><span class="rbadge no">2</span><h3>동방병원 본부</h3></div>
+        <p class="raddr">上海市浦东新区即墨路150号 · 지하철 2호선 东昌路역 1출구 도보 7~8분</p>
+        <p class="rline">오후 일반외래 <b>12:30~15:30 현장 접수</b>(여권) · 진찰료 <b>25위안</b> · 특진부는 메일 예약(<b>easthospitalvipclinic@hotmail.com</b>) 답장 대기 중</p>
+        <div class="rtags"><span class="chip city">3급 갑등</span><span class="chip">일반외래</span><span class="chip">1펜</span></div>
+      </div>
+    </div>
+    <div class="rleg">🚕 택시 4.9km · 약 14분</div>
+    <div class="rstep">
+      <div class="rwhen"><b>14:45</b><small>~16:15</small></div>
+      <div class="rbody">
+        <div class="rtop"><span class="rbadge no">3</span><h3>공리병원</h3></div>
+        <p class="raddr">上海市浦东新区苗圃路219号 · 지하철 6호선 源深体育中心역 도보 3분</p>
+        <p class="rline">오후 일반외래 <b>~16:30 접수 마감</b> · 진찰료 <b>25위안</b> · <b>목요일 오후는 비만 전문클리닉</b> 날</p>
+        <div class="rtags"><span class="chip city">3급 을등</span><span class="chip">일반외래</span><span class="chip">1펜</span></div>
+      </div>
+    </div>
+    <div class="rleg">🚕 택시 36.5km · 약 37분</div>
+    <div class="rstep">
+      <div class="rwhen"><b>17:00</b><small>공항 도착</small></div>
+      <div class="rbody">
+        <div class="rtop"><span class="rbadge">도착</span><h3>푸동공항 T2 — 20:10편까지 3시간</h3></div>
+        <p class="rline">처방전·인쇄 영수증(<b>发票</b>)까지 받아 보냉백에 넣고 기내로. 마운자로는 <b>위탁 수하물 금지</b>입니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="relay-note">
+    <div class="rn-k">왜 이 순서인가 · 세 곳을 고른 이유</div>
+    <ul>
+      <li><b>오전은 런지부터.</b> 입국심사를 마치고 공항을 나서면 보통 09:20~09:30입니다. 공리를 먼저 돌면 대기 줄에 밀려 <b>12:15 런지 예약</b>에 쫓기지만, 런지로 직행하면 예약 시각에 여유 있게 들어갑니다.</li>
+      <li><b>런지가 핵심인 이유.</b> 세 곳 중 유일하게 <b>예약 + 영어 진료 + 재고 확인</b>이 끝난 곳입니다. 여기서 1펜을 확보해 놓고 나머지를 노리는 것이 안전합니다.</li>
+      <li><b>동방을 3번째 후보에서 2번째로.</b> 원래 후보였던 <b>푸난병원(2급 갑등)</b>은 <b>런지병원 협력 분원(런지 푸난분원)</b>으로 묶여 있어, 전산 연동 리스크를 피하려면 <b>동방병원 본부(3급 갑등)</b>가 더 깔끔합니다. 푸난은 예비로 남겨 두세요.</li>
+      <li><b>마감 시각을 지키는 게 관건.</b> 동방은 <b>15:30</b>, 공리는 <b>16:30</b>에 오후 접수가 끝납니다. 동방에서 조금 늘어져도 <b>15:30 전에 공리 창구</b>에 들어가면 하루가 완성됩니다.</li>
+      <li><b>비용 단순 합산</b> — 진찰료 508+25+25=<b>558위안</b>, 5mg 3펜 551×3=<b>1,653위안</b>, 합계 <b>2,211위안(약 44만 원)</b>. 여기에 택시·항공이 더해집니다(택시 요금은 디디 앱에서 출발 전에 확인).</li>
+    </ul>
+  </div>
+
+  <div class="pharm">
+    <div class="pharm-head"><span class="ico" aria-hidden="true">💊</span>원내 약국에 재고가 없을 때 — 외배처방 백업 3단계</div>
+    <p class="pharm-sub">병원에서 처방은 받았는데 <b>원내 약국에 재고가 없으면</b> 건물 안에서 끝나지 않습니다. 종이 <b>외배처방전(外配处方)</b>을 받아 문전 지정약국으로 가야 합니다. 상하이는 2026-05-15부터 GLP-1 주사제를 <b>병원 종이처방 없이는 약국에서 팔지 않습니다</b>.</p>
+    <ol class="pharm-steps">
+      <li>
+        <div class="ph-k"><span class="n">1</span>진료실에서 종이 외배처방전 요청</div>
+        <p>의사에게 아래 문장을 그대로 보여주세요. 원내 약국 재고를 먼저 확인하고, 없으면 종이 처방으로 끊어 달라는 문장입니다.</p>
+        <div class="rx">
+          <div class="rx-cn">如果院内药房没货，请开纸质外配处方，谢谢。</div>
+          <div class="rx-pron">루궈 위안네이 야오팡 메이 훠, 칭 카이 즈즈 와이페이 추팡, 시에시에.</div>
+          <div class="rx-ko">원내 약국에 재고가 없으면 종이 외배처방전으로 끊어 주세요.</div>
+          <div class="rx-acts">
+            <button class="act primary" type="button" data-copy-text="如果院内药房没货，请开纸质外配处方，谢谢。">📋 중국어 복사</button>
+            <button class="act" type="button" data-flash-text="如果院内药房没货，请开纸质外配处方，谢谢。" data-flash-ko="원내 약국에 재고가 없으면 종이 외배처방전으로 끊어 주세요.">🔍 크게 보기</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ph-k"><span class="n">2</span>처방전을 받자마자 3가지 확인</div>
+        <p>약국이 2026-05-15 이후 가장 엄격하게 보는 항목입니다. 하나라도 빠지면 조제를 거절당합니다.</p>
+        <ul>
+          <li><b>여권 영문명·여권번호</b> — 신분증과 글자 하나까지 같아야 합니다(<b>HONG TEAK LIM</b>).</li>
+          <li><b>규격 <code>2.4ml:20mg</code></b> — 5mg 다회용 펜 1개라는 표기. 용량이 다르면 재고가 있어도 조제되지 않습니다.</li>
+          <li><b>의사 서명 · 병원 직인</b> — 도장이 없으면 약국에서 되돌아옵니다.</li>
+        </ul>
+      </li>
+      <li>
+        <div class="ph-k"><span class="n">3</span>바로 앞 문전 지정약국에서 조제</div>
+        <table class="ph-table">
+          <tbody>
+            <tr><th>런지 앞</th><td><b>国大龙威大药房 浦建路店</b> · 浦建路111号 101室 · 도보 3~5분 · <b>24시간</b> · 双通道 지정약국</td></tr>
+            <tr><th>공리 앞</th><td><b>国大龙威大药房 苗圃路店</b> · 苗圃路219~221号 · 병원 정문 앞 · 같은 체인·같은 双通道 계열</td></tr>
+          </tbody>
+        </table>
+        <p>여권과 종이 처방전을 내고 결제한 뒤 <b>인쇄 영수증(发票)</b>과 <b>아이스팩 포장</b>을 꼭 받으세요.</p>
+      </li>
+    </ol>
+    <p class="cmp-notes">약값은 병원과 같은 <b>5mg 551위안</b> 선이고 <b>처방 수량만큼만</b> 살 수 있습니다 — 1펜 한도를 약국으로 늘릴 수는 없습니다. 약국 자체 원격처방으로 여러 펜을 받는 루트는 단속 위험이 커 권하지 않습니다. 같은 이유로 징동(JD) 비대면도 당일치기에는 맞지 않습니다(중국 번호·배송 2~3일).</p>
+  </div>
 </section>
 
 <!-- ══════════ 진료실 회화 ══════════ -->
@@ -2100,6 +2380,7 @@
         <ul>
           <li>병원에서 <b>1펜만 처방</b>받았을 때: 병원에서 <b>외부 처방전(外配处方)</b>을 받아 DTP·이중채널 약국에서 추가 구매하는 루트입니다.</li>
           <li><b>강더러 대약방 푸동점</b> — 릴리 마운자로(穆峰达) 정식 취급 DTP 약국 · 런지병원 동원에서 택시 8~10분 · <b>021-60752616</b></li>
+          <li><b>원내 약국 품절 시 3단계</b> — ① 진료실에서 <b>종이 외배처방전</b> 요청(<b>如果院内药房没货，请开纸质外配处方，谢谢。</b>) ② 여권 영문명·여권번호 / 규격 <b>2.4ml:20mg</b> / 의사 서명·병원 직인 확인 ③ 문전 지정약국 — 런지 앞 <b>国大龙威大药房 浦建路店</b>(浦建路111号 · 24시간) · 공리 앞 <b>苗圃路店</b>(苗圃路219~221号)</li>
           <li><b>징동대약방 상하이점</b>(枫林路店) — 징둥헬스 직영 이중채널 약국 · 펜당 <b>약 15만 원대</b> 구매 후기(2026-11)</li>
           <li><b>징동(JD) 앱 비대면</b> — 여권 인증 후 앱에서 의사 문진·전자 처방을 받아 결제하는 방식. 성공 사례가 있지만 <b>중국 현지 휴대폰 번호</b>가 필요하고 인증 실패 후기도 많습니다. 배송 외에 <b>약국 수령(픽업)</b>도 가능하며, 상품에 <b>징동 자영(自营)</b> 표시가 있는지 확인하세요. 배송비 포함 764위안 결제 후기(2.5mg · 2026-09).</li>
           <li><b>메이투안</b>은 중국 신분증이 필요해 여권으로는 막히는 후기가 많습니다. 온라인만 기대하지 말고 병원 진료를 기본으로 두세요.</li>
@@ -2163,6 +2444,7 @@
           <li><b>온라인 진료</b> — 일본 체류 중에만 신청할 수 있고 <b>일본 내 주소로만 배송</b>됩니다. 해외 발송·공항 수령은 불가. 호텔 배송은 프런트의 냉장 보관 확인이 필요합니다.</li>
           <li><b>처방 한도</b> — 1회 진찰에 <b>3개월분(12본)</b>까지 주는 곳이 있습니다(모데나). 클리닉마다 달라 예약 시 확인하세요.</li>
           <li><b>보냉백</b> — 3본 이상이면 무료로 주는 곳이 많습니다(모데나). 1~2본은 220엔인 경우가 있습니다.</li>
+          <li><b>대마도 배송</b> — 폰타나 클리닉은 온라인 진료 후 <b>대마도 숙소·야마토 운수 영업소</b>로 보냅니다. 약값 + <b>2,500엔</b>(일본 국내 배송비·일영 병기 처방전), 배송 2~3일, 방문 1주일 전까지 진료 권장. 부산에서 배로 1시간 남짓이라 비행기 없이 다녀올 수 있습니다.</li>
           <li><b>세관 서류</b> — 영어 처방내용서를 무료로 발급하는 곳(모데나), 유료 3,000~3,300엔인 곳(일본 WEB CLINIC·유신내과)이 있습니다.</li>
         </ul>
       </div>
@@ -2767,7 +3049,7 @@
       id: "jp-fontana-tenjin", no: 26, country: "jp", city: "fukuoka", cityLabel: "🇯🇵 후쿠오카 · 텐진",
       name: "폰타나 클리닉 텐진", cn: "FONTANA CLINIC 天神",
       status: "confirmed", statusLabel: "공식 가격표 확인",
-      chips: ["한국어 스태프", "초진·재진 0엔", "호텔 배송"],
+      chips: ["한국어 스태프", "초진·재진 0엔", "호텔·대마도 배송"],
       tags: ["korean", "daytrip"],
       prices: { "2.5": 3950, "5": 6350, "7.5": 10150, "10": 12225, "12.5": 15000, "15": 17075 }, exam: 0,
       facts: [
@@ -2776,7 +3058,8 @@
         ["12.5mg · 15mg", "60,000 · 68,300엔 (4본) · 3개월 46,200엔(2.5mg) 묶음 할인"],
         ["진찰료", "<b>초진·재진 0엔</b> · 보냉백·아이스팩 무료"],
         ["언어", "<b>한국어 스태프 매일 근무</b> · 카카오톡 ID fontanaclinic · 진료는 일본어(번역 병행)"],
-        ["수령", "내원 후 원내 수령 또는 <b>온라인 진료 후 호텔 배송</b> · 대마도는 숙소·야마토 영업소로 배송"],
+        ["수령", "내원 후 원내 수령 또는 <b>온라인 진료 후 호텔 배송</b>"],
+        ["대마도 배송", "<b>대마도 숙소·야마토 영업소</b>로 배송 · 온라인 진료 결제는 약값 <b>+2,500엔</b>(배송비·일영 처방전 포함) · 배송 2~3일"],
         ["접근", "지하철 <b>텐진미나미역 도보 7분</b>·텐진역 10분 · 후쿠오카공항에서 25분 260엔"]
       ],
       note: "예약부터 수령까지 <strong>한국어로</strong> · 원내 수령과 호텔 배송을 둘 다 고를 수 있습니다",
@@ -2840,10 +3123,11 @@
       tags: ["confirmed", "daytrip"],
       facts: [
         ["진찰료", "<span class='price'>508위안</span> · 영어 진료 가능"],
-        ["예약", "이메일 renji_clinic@renji.com"],
+        ["예약", "이메일 renji_clinic@renji.com · <b>11/26 12:15</b> 요청(확정 회신 대기)"],
         ["마운자로 5mg", "<b>원내 재고 보유</b> · 약가 551위안 · <b>1회 1펜</b>(4주분) 제한"],
         ["11/17 메일 회신", "규정상 1회 1펜만 처방('只能开一支' 확인) — 3펜 일괄 처방 불가"],
         ["공항 동선", "푸동공항 → 2호선·자기부상 + <b>4호선 塘桥</b>(2출구 456m) / <b>6호선 儿童医学中心</b>(3출구 497m) 약 <b>50분</b>"],
+        ["릴레이", "공항에서 택시 36.2km/36분 · 3곳 중 <b>1번째</b>(핵심) → 동방 5.0km/13분"],
         ["항공", "제주 직항 약 20.7만 · 인천 25.2만~ · 김포(홍차오) 26.7만~"],
         ["세관 서류", "정식 처방전 + 인쇄 영수증(发票) 발급 가능"]
       ],
@@ -2859,10 +3143,12 @@
       tags: ["daytrip"],
       facts: [
         ["진찰료", "일반외래 <b>25위안</b> 수준"],
+        ["접수", "오후 일반외래 <b>12:30~15:30</b> 현장 접수(여권) · 특진부는 메일 예약"],
         ["11/17 시도", "특진부 전화 연결 불가 — 메일(easthospitalvipclinic@hotmail.com) 회신 대기"],
         ["같은 건물", "B동 23~24층 <b>SEIMC 국제병원</b> — 아래 카드 참고(초진 1,200위안 · 조건부 3펜)"],
         ["확인 필요", "외국인 접수 · 마운자로 재고 별도 확인"],
-        ["공항 동선", "푸동공항 → 2호선 직통 <b>东昌路역</b> 1출구 도보 7~8분, 약 <b>55분</b>"]
+        ["공항 동선", "푸동공항 → 2호선 직통 <b>东昌路역</b> 1출구 도보 7~8분, 약 <b>55분</b>"],
+        ["릴레이", "런지에서 택시 5.0km/13분 · <b>2번째</b> → 공리 4.9km/14분"]
       ],
       note: "런지병원 <strong>백업 후보</strong> · 11/17 전화 불통, 특진부 메일 회신 대기",
       coord: [31.2397, 121.5117],
@@ -2875,12 +3161,14 @@
       chips: ["3급 을등 공립", "일반외래"],
       tags: ["daytrip"],
       facts: [
-        ["진찰료", "일반외래 <b>18위안</b> 수준(3급 을등)"],
+        ["진찰료", "일반외래 <b>25위안</b> 수준(3급 을등)"],
+        ["접수", "오후 일반외래 <b>~16:30</b> 마감 · <b>목요일 오후 비만 전문클리닉</b>"],
         ["재고 근거", "2026-01 국가의보 실제 판매 기관 명단에 포함"],
         ["11/17 시도", "대표·예약센터·약국 내선 모두 연결 불가 — 메일(gongli@mail.stn.sh.cn)·현장 확인 필요"],
-        ["공항 동선", "6호선 <b>源深体育中心역</b> 도보 3분 · 푸동공항에서 약 60분"]
+        ["공항 동선", "6호선 <b>源深体育中心역</b> 도보 3분 · 푸동공항에서 약 60분"],
+        ["릴레이", "동방에서 택시 4.9km/14분 · <b>3번째</b> → 공항 36.5km/37분"]
       ],
-      note: "푸동 <strong>최저 진찰료 후보</strong>(18위안) · 전화 불통으로 메일·현장 확인 단계",
+      note: "푸동에서 <strong>오후 접수가 가장 늦게까지</strong> 이어지는 곳(~16:30) · 목요일 오후 비만 전문클리닉 · 전화 불통으로 메일·현장 확인 단계",
       coord: [31.2406, 121.5396],
       taxi: { addr: "上海市浦东新区苗圃路219号", station: "地铁6号线 源深体育中心站（步行约300米）" }
     },
@@ -3860,6 +4148,34 @@
     var t = e.target;
     var b = t.closest ? t.closest("[data-taxi]") : null;
     if (b && !cardsEl.contains(b)) openTaxi(b.getAttribute("data-taxi"));
+  });
+
+  /* 처방전·약국 문장: 복사 + 큰 글씨 보여주기 */
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+    if (!t.closest) return;
+    var cp = t.closest("[data-copy-text]");
+    if (cp) { copyText(cp.getAttribute("data-copy-text"), "중국어 문장을 복사했어요"); return; }
+    var fb = t.closest("[data-flash-text]");
+    if (fb) {
+      var cn = fb.getAttribute("data-flash-text");
+      var ko = fb.getAttribute("data-flash-ko") || "";
+      var body =
+        '<div class="flash-block"><div class="flash-label">중국어</div><div class="flash-cn">' + cn + "</div></div>" +
+        (ko ? '<div class="flash-block"><div class="flash-label">한국어 뜻</div><div class="flash-station">' + ko + "</div></div>" : "");
+      var acts =
+        '<button class="flash-btn solid" type="button" id="flashSizeBtn">🔍 글씨 크게</button>' +
+        '<button class="flash-btn" type="button" data-flash-copy="cn">📋 중국어 복사</button>' +
+        '<button class="flash-btn" type="button" id="flashDone">닫기</button>';
+      openFlash("💊 의사 선생님께 이 화면을 보여주세요", body, acts, { type: "custom" });
+      document.getElementById("flashSizeBtn").addEventListener("click", function () {
+        flashSize = (flashSize + 1) % 3;
+        setFlashSize();
+      });
+      document.getElementById("flashDone").addEventListener("click", closeFlash);
+      var c2 = flashActs.querySelector("[data-flash-copy]");
+      if (c2) c2.addEventListener("click", function () { copyText(cn, "중국어 문장을 복사했어요"); });
+    }
   });
 
   /* ------------------------------------------------------------------ 복사 · 토스트 · 공유 */
