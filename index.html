@@ -4186,6 +4186,7 @@
     shanghai:  { label: "상하이", coord: [31.2290, 121.5215] },
     ningbo:    { label: "닝보", coord: [29.8730, 121.5480] },
     qingdao:   { label: "칭다오", coord: [36.0671, 120.3826] },
+    yantai:    { label: "옌타이", coord: [37.5350, 121.3900] },
     beijing:   { label: "베이징", coord: [39.9400, 116.4200] },
     south:     { label: "광저우·선전", coord: [23.1000, 113.4500] },
     hangzhou:  { label: "항저우", coord: [30.2530, 120.1777] },
@@ -4318,7 +4319,7 @@
       markerLayer.addLayer(m);
       clusterMarkers[city] = m;
     });
-    var pts = Object.keys(counts).map(function (c) { return CITY_PINS[c].coord; });
+    var pts = Object.keys(counts).map(function (c) { return (CITY_PINS[c] || {}).coord; }).filter(Boolean);
     if (pts.length > 1) {
       map.flyToBounds(L.latLngBounds(pts), { padding: map.getSize().x < 680 ? [28, 28] : [60, 60], maxZoom: 6, duration: 0.6 });
     } else if (pts.length === 1) {
