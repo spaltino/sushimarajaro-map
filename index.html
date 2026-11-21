@@ -1082,8 +1082,25 @@
     .tab .count{font-size:10px;padding:1px 5px;min-width:16px;}
 
     /* 계산기: 입력 폼 먼저 → 핵심 결과가 바로 아래에 오도록 */
-    .calc-grid{display:flex;flex-direction:column;overflow:visible;min-height:0;}
-    #calcModal .modal-panel{max-height:96dvh;}
+    /* 모바일에서는 .calc-grid 자체가 세로 스크롤 영역이 된다.
+       (예전에는 overflow:visible + 패널 overflow:hidden 이라 아래 내용이 그냥 잘려 나가
+        iOS Safari에서 아무리 스와이프해도 스크롤이 되지 않았다) */
+    #calcModal .modal-panel{
+      max-height:96vh;max-height:96dvh;
+      height:auto;overflow:hidden;
+    }
+    #calcModal .modal-head{flex:none;}
+    .calc-grid{
+      display:flex;flex-direction:column;
+      flex:1 1 auto;min-height:0;
+      overflow-x:hidden;overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      overscroll-behavior:contain;
+      touch-action:manipulation;
+      padding-bottom:calc(20px + env(safe-area-inset-bottom));
+    }
+    /* 세로 flex 안에서 항목이 찌그러지지 않게(찌그러지면 스크롤할 내용이 사라진다) */
+    #calcModal .calc-grid > *{flex:0 0 auto;}
     #calcModal .modal-head{padding:11px 14px 9px;}
     #calcModal .modal-head .kicker{display:none;}
     #calcModal .modal-head h2{font-size:16px;}
@@ -5148,18 +5165,25 @@
   });
 
   var calcModal = document.getElementById("calcModal");
+  var calcScroll = calcModal.querySelector(".calc-grid");
   var calcLastFocus = null;
   function openCalc() {
     calcLastFocus = document.activeElement;
     calcModal.hidden = false;
     document.body.style.overflow = "hidden";
     updateCalc();
+    // 항상 맨 위(입력 폼)부터 보이게 — iOS Safari는 직전 스크롤 위치를 기억한다
+    if (calcScroll) calcScroll.scrollTop = 0;
     var b = calcModal.querySelector(".modal-close");
-    if (b) b.focus();
+    if (b) {
+      try { b.focus({ preventScroll: true }); } catch (eFocus) { try { b.focus(); } catch (eFocus2) {} }
+    }
+    if (calcScroll) calcScroll.scrollTop = 0;
   }
   function closeCalc() {
     calcModal.hidden = true;
     document.body.style.overflow = "";
+    if (calcScroll) calcScroll.scrollTop = 0;
     if (calcLastFocus && calcLastFocus.focus) calcLastFocus.focus();
   }
   document.getElementById("calcBtn").addEventListener("click", openCalc);
