@@ -5344,7 +5344,7 @@
           (r.country === "kr" ? "—" : (diff > 0 ? "−" : "+") + man(Math.abs(diff))) + "</td></tr>";
       }).join("") + "</tbody>";
 
-    penHintEl.textContent = "일본 " + (calc.months * 4) + "본 · 중국 " + calc.months + "펜 · 세관 한도 3개월(12개)";
+    penHintEl.textContent = "일본 " + (calc.months * 4) + "본 · 중국 " + calc.months + "펜 · 한도 넘기면 전량 보류";
     doseNoteEl.textContent = calc.dose + "mg · " + calc.months + "개월";
     updateInsight();
   }
