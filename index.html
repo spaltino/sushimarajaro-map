@@ -1192,7 +1192,8 @@
   .gate-brand .gb-mala{color:#d0512a;}
   .gate-brand .gb-map{font-size:.68em;letter-spacing:-.03em;color:#7d7468;}
   .gate-rule{display:block;width:54px;height:3px;margin:13px auto 0;border-radius:2px;background:linear-gradient(90deg,#e0728a,#d8552f);}
-  .gate-q{margin:15px 0 6px;text-align:center;font-size:clamp(15px,2.1vw,18px);font-weight:800;letter-spacing:-.015em;color:var(--ink);}
+  .gate-q-note{margin:15px 0 0;text-align:center;font-size:11.5px;font-weight:700;color:var(--muted);letter-spacing:-.01em;word-break:keep-all;}
+  .gate-q{margin:2px 0 6px;text-align:center;font-size:clamp(15px,2.1vw,18px);font-weight:800;letter-spacing:-.015em;color:var(--ink);}
   .gate-sub{margin:0 auto clamp(16px,2.6vw,24px);text-align:center;max-width:660px;color:var(--muted);font-size:13px;line-height:1.6;}
   .gate-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,18px);}
   .gate-card{
@@ -1229,6 +1230,104 @@
     .gate-name small{font-size:10.5px;}
     .gate-meta{font-size:10.5px;}
     .gate-go{font-size:11.5px;}
+  }
+
+  /* ══════════ 대문: BMI 자가점검 진입 ══════════ */
+  .gate-bmi{
+    display:flex;align-items:center;gap:11px;
+    width:100%;max-width:452px;margin:15px auto 0;padding:11px 15px 11px 13px;
+    border:1px solid rgba(217,72,47,.3);border-radius:15px;
+    background:linear-gradient(135deg,#fff8f5 0%,#fffdf8 100%);
+    box-shadow:0 1px 2px rgba(25,27,31,.04);
+    text-align:left;font:inherit;color:inherit;cursor:pointer;
+    transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+  }
+  .gate-bmi:hover,.gate-bmi:focus-visible{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 24px rgba(217,72,47,.14);outline:none;}
+  .gate-bmi .gb-ico{
+    flex:none;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
+    background:#fff;border:1px solid rgba(217,72,47,.18);font-size:17px;line-height:1;
+  }
+  .gate-bmi .gb-txt{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;}
+  .gate-bmi .gb-t{font-size:13.5px;font-weight:900;letter-spacing:-.02em;color:var(--ink);line-height:1.3;}
+  .gate-bmi .gb-s{font-size:10.5px;font-weight:600;color:var(--muted);letter-spacing:-.01em;line-height:1.35;word-break:keep-all;}
+  .gate-bmi .gb-go{flex:none;font-size:13px;font-weight:900;color:var(--accent);line-height:1;}
+  @media (max-width: 620px){
+    .gate-bmi{margin-top:13px;padding:10px 12px 10px 11px;gap:9px;border-radius:13px;}
+    .gate-bmi .gb-ico{width:32px;height:32px;font-size:15px;border-radius:10px;}
+    .gate-bmi .gb-t{font-size:12.5px;}
+    .gate-bmi .gb-s{font-size:10px;}
+  }
+
+  /* ══════════ BMI 자가점검 모달 ══════════ */
+  .bmi-panel{width:min(700px,100%);}
+  .bmi-body{padding:16px 22px 20px;}
+  .bmi-intro{
+    display:flex;gap:9px;padding:11px 13px;border-radius:12px;
+    background:#fbf7ee;border:1px solid #ecdfc2;
+    font-size:11.5px;line-height:1.58;color:#7a6238;letter-spacing:-.01em;word-break:keep-all;
+  }
+  .bmi-intro .bi-ico{font-size:14px;line-height:1.35;flex:none;}
+  .bmi-intro b{color:#8a5a08;font-weight:800;}
+  .bmi-inputs{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:14px;}
+  .bmi-inputs > *{min-width:0;}
+  .bmi-hint{grid-column:1/-1;font-size:10.5px;color:var(--muted);line-height:1.45;letter-spacing:-.01em;font-variant-numeric:tabular-nums;}
+  .bmi-result{
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:15px;align-items:center;
+    margin-top:13px;padding:13px 15px;border-radius:14px;
+    background:#fbfaf7;border:1px solid var(--line);
+    transition:background .16s ease,border-color .16s ease;
+  }
+  .bmi-result.is-ok{background:#eef9f3;border-color:rgba(14,122,85,.22);}
+  .bmi-result.is-warn{background:#fdf6e8;border-color:rgba(177,106,12,.24);}
+  .bmi-result.is-no{background:#f3f2ef;border-color:var(--line-strong);}
+  .bmi-num-wrap{min-width:92px;text-align:center;}
+  .bmi-num{font-size:33px;font-weight:900;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;}
+  .bmi-cat{margin-top:6px;font-size:10.5px;font-weight:800;color:var(--ink-2);letter-spacing:-.02em;line-height:1.35;word-break:keep-all;}
+  .bmi-sum-t{font-size:12.5px;font-weight:800;letter-spacing:-.02em;line-height:1.45;word-break:keep-all;color:var(--ink);}
+  .bmi-sum-s{margin-top:4px;font-size:11px;color:var(--ink-2);line-height:1.52;letter-spacing:-.01em;word-break:keep-all;}
+  .bmi-countries{display:flex;flex-direction:column;gap:8px;margin-top:13px;}
+  .bmi-c{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 10px;align-items:start;
+    padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;
+  }
+  .bmi-c .bc-h{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;min-width:0;}
+  .bmi-c .bc-h b{font-size:12.5px;font-weight:900;letter-spacing:-.02em;}
+  .bmi-c .bc-h span{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:-.01em;}
+  .bmi-v{
+    display:inline-flex;align-items:center;gap:4px;flex:none;margin-top:1px;
+    font-size:10.5px;font-weight:800;letter-spacing:-.01em;padding:3px 8px;border-radius:999px;
+    border:1px solid transparent;white-space:nowrap;
+  }
+  .bmi-v::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;flex:none;}
+  .bmi-v.ok{color:var(--ok);background:var(--ok-bg);border-color:rgba(14,122,85,.18);}
+  .bmi-v.warn{color:var(--pending);background:var(--pending-bg);border-color:rgba(177,106,12,.18);}
+  .bmi-v.no{color:var(--official);background:var(--official-bg);border-color:rgba(91,96,104,.2);}
+  .bmi-v.na{color:var(--muted);background:#f4f3ef;border-color:var(--line);}
+  .bmi-c .bc-thr{grid-column:1/-1;font-size:10.5px;color:var(--muted);line-height:1.48;letter-spacing:-.01em;word-break:keep-all;}
+  .bmi-c .bc-vd{grid-column:1/-1;margin-top:2px;font-size:11.5px;color:var(--ink-2);line-height:1.48;letter-spacing:-.01em;word-break:keep-all;}
+  .bmi-sexnote{
+    margin-top:11px;padding:9px 11px;border-radius:10px;
+    background:var(--accent-soft);border:1px solid rgba(217,72,47,.2);
+    font-size:11px;line-height:1.5;color:#9c3a24;letter-spacing:-.01em;word-break:keep-all;
+  }
+  .bmi-sexnote[hidden]{display:none;}
+  .bmi-foot{margin-top:11px;padding-top:11px;border-top:1px solid var(--line);font-size:10.5px;color:var(--muted);line-height:1.58;letter-spacing:-.01em;word-break:keep-all;}
+  @media (max-width: 620px){
+    #bmiModal{padding:10px;}
+    .bmi-panel{max-height:94vh;max-height:94dvh;}
+    .bmi-body{padding:12px 14px 18px;}
+    .bmi-intro{font-size:11px;padding:10px 11px;gap:7px;}
+    .bmi-inputs{gap:9px;margin-top:11px;}
+    .bmi-result{grid-template-columns:minmax(0,1fr);gap:9px;padding:11px 13px;margin-top:11px;}
+    .bmi-num-wrap{min-width:0;display:flex;align-items:baseline;gap:8px;text-align:left;flex-wrap:wrap;}
+    .bmi-num{font-size:29px;}
+    .bmi-cat{margin-top:0;}
+    .bmi-sum-t{font-size:12px;}
+    .bmi-sum-s{font-size:10.5px;}
+    .bmi-c{padding:9px 11px;gap:2px 8px;}
+    .bmi-c .bc-h b{font-size:12px;}
+    .bmi-v{font-size:10px;padding:2px 7px;}
+    .bmi-c .bc-vd{font-size:11px;}
   }
 
   /* 헤더의 작은 자로 스위처 */
@@ -1310,7 +1409,16 @@
     <span class="gate-kicker">🍣 Where to get Mounjaro 🌶️</span>
     <h2 class="gate-brand" id="gateTitle"><span class="gb-sushi">스시</span><span class="gb-mala">마라</span>자로 <span class="gb-map">맵</span></h2>
     <span class="gate-rule" aria-hidden="true"></span>
-    <p class="gate-q">어느 쪽으로 갈까요?</p>
+    <button class="gate-bmi" id="bmiGateBtn" type="button" aria-haspopup="dialog">
+      <span class="gb-ico" aria-hidden="true">⚖️</span>
+      <span class="gb-txt">
+        <span class="gb-t">잠깐, 당신의 BMI는?</span>
+        <span class="gb-s">성별·신장·몸무게로 한·중·일 처방 기준 확인</span>
+      </span>
+      <span class="gb-go" aria-hidden="true">→</span>
+    </button>
+    <p class="gate-q-note">(처방 기준이 되신 분들에 한하여)</p>
+    <p class="gate-q">그럼, 이제 어디로 갈까요?</p>
     <p class="gate-sub">둘 중 하나를 고르면 지도가 그 나라로 바로 확대되고, 가격·동선·세관·회화가 <b>고른 쪽에 맞춰</b> 정리됩니다. 언제든 위쪽 작은 스위처로 바꿀 수 있습니다.</p>
     <div class="gate-cards">
       <button class="gate-card jp" type="button" data-gate="jp">
@@ -2769,6 +2877,7 @@
   <div class="row">
     <button type="button" id="footGuide">세관·준비물 가이드</button>
     <button type="button" id="footCalc">원정 손익 계산기</button>
+    <button type="button" id="footBmi">BMI 자가점검</button>
     <a href="#faq">자주 묻는 질문</a>
     <a href="https://github.com/spaltino/sushimarajaro-map" target="_blank" rel="noopener">GitHub 저장소</a>
     <a href="https://spaltino.github.io/malajaro-map/" target="_blank" rel="noopener">중국만 보기 (마라자로 맵)</a>
@@ -2867,6 +2976,82 @@
         </div>
         <p class="calc-caveat"><b>참고</b> 항공권은 2026-11-16 조회(나고야·삿포로는 11-17 12월 구간 재조회) 왕복 직항 최저가대, 일본 약가는 클리닉 공식 가격표(4본 환산), 중국 약가는 국가의보 협상가(4주분 펜 1개), 한국 기준가는 비급여 판매가 중간값입니다. 중국 진찰료는 칭다오 100위안·상하이 508위안·항저우 800위안(확인), 그 외 도시는 일반외래 25위안 수준으로 가정했습니다. 카드 수수료·해외결제 수수료·검사비는 포함하지 않았습니다. 다만 중국에서 <b>비자·마스터 카드</b>를 알리페이에 달면 <b>200위안 초과 결제에 3%</b>가 붙는다는 점은 따로 계산해 두세요(유니온페이는 면제).</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- BMI 자가점검: 한·중·일 처방 기준 -->
+<div class="modal" id="bmiModal" hidden>
+  <div class="modal-backdrop" data-close-bmi="1"></div>
+  <div class="modal-panel bmi-panel" role="dialog" aria-modal="true" aria-labelledby="bmiTitle">
+    <div class="modal-head">
+      <div>
+        <div class="kicker">BMI Self-Check</div>
+        <h2 id="bmiTitle">잠깐, 당신의 BMI는?</h2>
+        <p>성별·신장·몸무게 세 개로 한·중·일 허가·진료 기준을 먼저 확인합니다</p>
+      </div>
+      <button class="modal-close" type="button" data-close-bmi="1" aria-label="닫기">✕</button>
+    </div>
+    <div class="modal-body bmi-body">
+      <div class="bmi-intro">
+        <span class="bi-ico" aria-hidden="true">💡</span>
+        <span><b>마운자로를 권유하는 도구가 아닙니다.</b> 한·중·일 각국의 허가·진료 기준을 먼저 확인하고, 안전하게 기준을 지키기 위한 자가 점검입니다. 실제 처방 여부는 반드시 현지 전문의가 결정합니다.</span>
+      </div>
+
+      <div class="bmi-inputs">
+        <div class="field full">
+          <div class="flabel">성별 <em>참고용</em></div>
+          <div class="seg" id="bmiSexSeg" role="group" aria-label="성별">
+            <button type="button" data-bmi-sex="m" aria-pressed="true">남성</button>
+            <button type="button" data-bmi-sex="f" aria-pressed="false">여성</button>
+          </div>
+        </div>
+        <div class="field">
+          <div class="flabel">신장 <em>cm</em></div>
+          <div class="amount"><input type="text" inputmode="numeric" id="bmiHeight" placeholder="175" autocomplete="off" aria-label="신장 센티미터"><span class="unit">cm</span></div>
+        </div>
+        <div class="field">
+          <div class="flabel">몸무게 <em>kg</em></div>
+          <div class="amount"><input type="text" inputmode="decimal" id="bmiWeight" placeholder="80" autocomplete="off" aria-label="몸무게 킬로그램"><span class="unit">kg</span></div>
+        </div>
+        <p class="bmi-hint" id="bmiHint">BMI = 몸무게 ÷ (신장 m)² · 소수점 첫째 자리까지 표시</p>
+      </div>
+
+      <div class="bmi-result" id="bmiResult">
+        <div class="bmi-num-wrap">
+          <div class="bmi-num" id="bmiNum">—</div>
+          <div class="bmi-cat" id="bmiCat">BMI</div>
+        </div>
+        <div>
+          <p class="bmi-sum-t" id="bmiSumT">신장과 몸무게를 입력하면 바로 판정합니다</p>
+          <p class="bmi-sum-s" id="bmiSumS">성별은 참고용이며, 한·중·일 기준 수치는 남녀 공통입니다.</p>
+        </div>
+      </div>
+
+      <div class="bmi-countries">
+        <div class="bmi-c">
+          <div class="bc-h"><b>🇰🇷 한국</b><span>식약처 허가 기준</span></div>
+          <span class="bmi-v na" id="bmiKrBadge">입력 대기</span>
+          <div class="bc-thr">BMI 30 이상 처방 기준 · 27~29.9는 체중 관련 동반질환 1개 이상일 때</div>
+          <div class="bc-vd" id="bmiKrVerdict">신장과 몸무게를 입력하면 판정합니다.</div>
+        </div>
+        <div class="bmi-c">
+          <div class="bc-h"><b>🇨🇳 중국</b><span>NMPA 허가 기준</span></div>
+          <span class="bmi-v na" id="bmiCnBadge">입력 대기</span>
+          <div class="bc-thr">BMI 28 이상 비만 단독 적응증 · 24~27.9는 과체중 + 동반질환 기준</div>
+          <div class="bc-vd" id="bmiCnVerdict">신장과 몸무게를 입력하면 판정합니다.</div>
+        </div>
+        <div class="bmi-c">
+          <div class="bc-h"><b>🇯🇵 일본</b><span>학회·클리닉 기준</span></div>
+          <span class="bmi-v na" id="bmiJpBadge">입력 대기</span>
+          <div class="bc-thr">일본비만학회 비만 기준 25+ · 보험 적용·젭바운드 정식 기준은 BMI 35+ 또는 27+ + 건강장애 2개, 클리닉별 하한선이 다릅니다</div>
+          <div class="bc-vd" id="bmiJpVerdict">신장과 몸무게를 입력하면 판정합니다.</div>
+        </div>
+      </div>
+
+      <p class="bmi-sexnote" id="bmiSexNote" hidden>임신·수유 중이거나 임신을 계획 중이라면 BMI와 관계없이 마운자로(티르제파타이드)는 쓰지 않습니다. 먼저 의사와 상담하세요.</p>
+
+      <p class="bmi-foot">동반질환은 고혈압·2형 당뇨병·이상지질혈증·수면무호흡증 등입니다. 기준은 2026-11 확인된 식약처 허가사항 · 중국 NMPA 적응증 · 일본비만학회 비만 기준이며, 일본 마운자로의 정식 승인 적응증은 2형 당뇨병뿐이라 비만 목적 처방은 자유진료입니다. 참고용 자가 점검이니 실제 처방은 현지 의사의 판단을 따르세요.</p>
     </div>
   </div>
 </div>
@@ -5822,9 +6007,155 @@
     if (e.target.getAttribute && e.target.getAttribute("data-close-calc")) closeCalc();
   });
 
+  /* ------------------------------------------------------------------ BMI 자가점검 */
+  var bmiModal = document.getElementById("bmiModal");
+  var bmiLastFocus = null;
+  var bmiSexCur = "m";
+  var bmiEls = {
+    h: document.getElementById("bmiHeight"),
+    w: document.getElementById("bmiWeight"),
+    hint: document.getElementById("bmiHint"),
+    result: document.getElementById("bmiResult"),
+    num: document.getElementById("bmiNum"),
+    cat: document.getElementById("bmiCat"),
+    sumT: document.getElementById("bmiSumT"),
+    sumS: document.getElementById("bmiSumS"),
+    sexNote: document.getElementById("bmiSexNote"),
+    kr: { badge: document.getElementById("bmiKrBadge"), text: document.getElementById("bmiKrVerdict") },
+    cn: { badge: document.getElementById("bmiCnBadge"), text: document.getElementById("bmiCnVerdict") },
+    jp: { badge: document.getElementById("bmiJpBadge"), text: document.getElementById("bmiJpVerdict") }
+  };
+  var BMI_HINT_DEFAULT = "BMI = 몸무게 ÷ (신장 m)² · 소수점 첫째 자리까지 표시";
+  /* 국가별 판정 문구: [배지, 설명] — 수치 기준은 남녀 공통 */
+  var BMI_VERDICT = {
+    kr: {
+      ok: ["처방 기준 해당", "전문의 진료 후 처방 가능 — BMI 30 이상 단독 적응증입니다."],
+      warn: ["의사와 상담 필요", "BMI 27~29.9 — 체중 관련 동반질환 1개 이상이면 상담 대상입니다."],
+      no: ["기준 미달", "BMI 27 미만 — 의사와 신중한 상담이 필요합니다."]
+    },
+    cn: {
+      ok: ["처방 가능 기준", "BMI 28 이상 — 비만 단독 적응증 충족. 현지 전문의 진료는 필수입니다."],
+      warn: ["의사와 상담 필요", "BMI 24~27.9 — 과체중 + 동반질환 기준에 해당합니다."],
+      no: ["기준 미달", "BMI 24 미만 — 의사와 신중한 상담이 필요합니다."]
+    },
+    jp: {
+      ok: ["상담·처방 구간", "BMI 25 이상 — 자유진료 구간입니다. 실제 처방은 클리닉 판단에 따릅니다."],
+      no: ["기준 미달", "BMI 25 미만 — 의사와 신중한 상담이 필요합니다."]
+    }
+  };
+  function bmiToNum(v) {
+    var n = parseFloat(String(v).replace(/[^0-9.]/g, ""));
+    return isFinite(n) ? n : NaN;
+  }
+  function bmiSetBadge(node, key, level) {
+    node.badge.className = "bmi-v " + (level || "na");
+    node.badge.textContent = level ? BMI_VERDICT[key][level][0] : "입력 대기";
+    node.text.textContent = level ? BMI_VERDICT[key][level][1] : "신장과 몸무게를 입력하면 판정합니다.";
+  }
+  function bmiEmptyState(msg) {
+    bmiEls.hint.textContent = msg;
+    bmiEls.result.className = "bmi-result";
+    bmiEls.num.textContent = "—";
+    bmiEls.cat.textContent = "BMI";
+    bmiEls.sumT.textContent = "신장과 몸무게를 입력하면 바로 판정합니다";
+    bmiEls.sumS.textContent = "성별은 참고용이며, 한·중·일 기준 수치는 남녀 공통입니다.";
+    bmiSetBadge(bmiEls.kr, "kr", null);
+    bmiSetBadge(bmiEls.cn, "cn", null);
+    bmiSetBadge(bmiEls.jp, "jp", null);
+  }
+  function bmiRender() {
+    bmiEls.sexNote.hidden = bmiSexCur !== "f";
+    var hRaw = bmiEls.h.value.replace(/\s/g, "");
+    var wRaw = bmiEls.w.value.replace(/\s/g, "");
+    if (hRaw === "" || wRaw === "") { bmiEmptyState(BMI_HINT_DEFAULT); return; }
+    var h = bmiToNum(hRaw), w = bmiToNum(wRaw);
+    if (!(h >= 100 && h <= 230) || !(w >= 25 && w <= 250)) {
+      bmiEmptyState("신장 100~230cm · 몸무게 25~250kg 사이로 입력해 주세요.");
+      return;
+    }
+    var m = h / 100;
+    var bmi = Math.round((w / (m * m)) * 10) / 10;
+    var cat = bmi < 18.5 ? "저체중" : bmi < 23 ? "정상" : bmi < 25 ? "위험체중" : bmi < 30 ? "비만 1단게" : "비만 2단게";
+    var lvKr = bmi >= 30 ? "ok" : bmi >= 27 ? "warn" : "no";
+    var lvCn = bmi >= 28 ? "ok" : bmi >= 24 ? "warn" : "no";
+    var lvJp = bmi >= 25 ? "ok" : "no";
+    var tone = (lvKr === "ok" && lvCn === "ok" && lvJp === "ok") ? "is-ok" : (lvKr === "ok" || lvCn === "ok" || lvJp === "ok") ? "is-warn" : "is-no";
+    var t, s;
+    if (bmi >= 30) {
+      t = "한·중·일 세 나라 모두 비만 처방 기준에 들어갑니다.";
+      s = "그래도 처방은 어느 나라든 전문의 진료가 먼저입니다. 원정 여부와 비용은 그다음 문제이고, 세관 3개월 한도(일본 12본 · 중국 3펜)도 함께 계산하세요.";
+    } else if (bmi >= 28) {
+      t = "중국·일본 기준에는 해당하지만, 한국은 의사와 상담이 필요한 구간입니다.";
+      s = "중국은 BMI 28 이상이면 비만 단독 적응증, 일본은 25 이상 자유진료 구간입니다. 한국은 BMI 30 미만이라 체중 관련 동반질환 1개 이상일 때만 상담 대상입니다.";
+    } else if (bmi >= 25) {
+      t = "일본 기준(25+)에만 해당합니다.";
+      s = "한국 정식 기준(30+, 동반질환 시 27+)과 중국 비만 기준(28+)에는 미달합니다. 일본은 적응증 밖 자유진료라 부작용 구제 대상이 아니고, 클리닉별 하한선도 다릅니다.";
+    } else if (bmi >= 24) {
+      t = "중국의 동반질환 기준(24+)에만 걸립니다.";
+      s = "한국·일본의 비만 처방 기준에는 미달합니다. 약보다 진료가 먼저이고, 동반질환 여부는 병원에서 확인해야 합니다.";
+    } else if (bmi >= 18.5) {
+      t = "한·중·일 모두 비만 처방 기준에 해당하지 않습니다.";
+      s = "동반질환 기준까지 넣어도 마찬가지입니다. 무리한 원정이나 복용 대신, 체중·건강 상태를 의사와 신중히 상담하세요.";
+    } else {
+      t = "한·중·일 모두 비만 처방 기준에 해당하지 않습니다.";
+      s = "BMI 18.5 미만(저체중)은 어느 나라에서도 체중 감량 목적 처방 대상이 아닙니다. 무리한 원정 대신 의사와 신중히 상담하세요.";
+    }
+    bmiEls.hint.textContent = "몸무게 " + w + "kg ÷ 신장 " + m.toFixed(2) + "m² = " + bmi.toFixed(1);
+    bmiEls.result.className = "bmi-result " + tone;
+    bmiEls.num.textContent = bmi.toFixed(1);
+    bmiEls.cat.textContent = "아시아-태평양 기준 · " + cat;
+    bmiEls.sumT.textContent = t;
+    bmiEls.sumS.textContent = s;
+    bmiSetBadge(bmiEls.kr, "kr", lvKr);
+    bmiSetBadge(bmiEls.cn, "cn", lvCn);
+    bmiSetBadge(bmiEls.jp, "jp", lvJp);
+  }
+  function openBmi() {
+    bmiLastFocus = document.activeElement;
+    bmiModal.hidden = false;
+    document.body.style.overflow = "hidden";
+    bmiRender();
+    var body = bmiModal.querySelector(".bmi-body");
+    if (body) body.scrollTop = 0;
+    var b = bmiModal.querySelector(".modal-close");
+    if (b) {
+      try { b.focus({ preventScroll: true }); } catch (eFocus) { try { b.focus(); } catch (eFocus2) {} }
+    }
+    if (body) body.scrollTop = 0;
+  }
+  function closeBmi() {
+    bmiModal.hidden = true;
+    document.body.style.overflow = "";
+    if (bmiLastFocus && bmiLastFocus.focus) bmiLastFocus.focus();
+  }
+  ["bmiGateBtn", "footBmi"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("click", openBmi);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-bmi-sex]"), function (btn) {
+    btn.addEventListener("click", function () {
+      bmiSexCur = btn.getAttribute("data-bmi-sex");
+      Array.prototype.forEach.call(document.querySelectorAll("[data-bmi-sex]"), function (b2) {
+        b2.setAttribute("aria-pressed", b2 === btn ? "true" : "false");
+      });
+      bmiRender();
+    });
+  });
+  [bmiEls.h, bmiEls.w].forEach(function (inp) {
+    inp.addEventListener("input", bmiRender);
+    inp.addEventListener("change", bmiRender);
+    inp.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); bmiRender(); }
+    });
+  });
+  bmiModal.addEventListener("click", function (e) {
+    if (e.target.getAttribute && e.target.getAttribute("data-close-bmi")) closeBmi();
+  });
+
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Escape") return;
     if (!flash.hidden) { closeFlash(); return; }
+    if (!bmiModal.hidden) { closeBmi(); return; }
     if (!calcModal.hidden) { closeCalc(); return; }
     if (!modal.hidden) closeGuide();
   });
