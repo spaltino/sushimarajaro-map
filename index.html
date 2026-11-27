@@ -1186,7 +1186,13 @@
     .gate-banner img{max-width:880px;border-radius:18px;box-shadow:0 12px 30px rgba(25,27,31,.07);}
   }
   .gate-kicker{display:block;text-align:center;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
-  .gate-title{margin:10px 0 6px;text-align:center;font-size:clamp(21px,3.6vw,31px);line-height:1.25;letter-spacing:-.02em;}
+  /* 대문 메인 타이틀: 배너 바로 아래에서 주인공이 되는 워드마크 */
+  .gate-brand{margin:12px 0 0;text-align:center;font-size:clamp(30px,8.2vw,40px);font-weight:900;line-height:1.12;letter-spacing:-.05em;color:var(--ink);word-break:keep-all;}
+  .gate-brand .gb-sushi{color:#cf4560;}
+  .gate-brand .gb-mala{color:#d0512a;}
+  .gate-brand .gb-map{font-size:.68em;letter-spacing:-.03em;color:#7d7468;}
+  .gate-rule{display:block;width:54px;height:3px;margin:13px auto 0;border-radius:2px;background:linear-gradient(90deg,#e0728a,#d8552f);}
+  .gate-q{margin:15px 0 6px;text-align:center;font-size:clamp(15px,2.1vw,18px);font-weight:800;letter-spacing:-.015em;color:var(--ink);}
   .gate-sub{margin:0 auto clamp(16px,2.6vw,24px);text-align:center;max-width:660px;color:var(--muted);font-size:13px;line-height:1.6;}
   .gate-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,18px);}
   .gate-card{
@@ -1297,8 +1303,10 @@
     </picture>
   </div>
   <div class="gate-inner">
-    <span class="gate-kicker">Where to get Mounjaro</span>
-    <h2 class="gate-title" id="gateTitle">어느 쪽으로 갈까요?</h2>
+    <span class="gate-kicker">🍣 Where to get Mounjaro 🌶️</span>
+    <h2 class="gate-brand" id="gateTitle"><span class="gb-sushi">스시</span><span class="gb-mala">마라</span>자로 <span class="gb-map">맵</span></h2>
+    <span class="gate-rule" aria-hidden="true"></span>
+    <p class="gate-q">어느 쪽으로 갈까요?</p>
     <p class="gate-sub">둘 중 하나를 고르면 지도가 그 나라로 바로 확대되고, 가격·동선·세관·회화가 <b>고른 쪽에 맞춰</b> 정리됩니다. 언제든 위쪽 작은 스위처로 바꿀 수 있습니다.</p>
     <div class="gate-cards">
       <button class="gate-card jp" type="button" data-gate="jp">
