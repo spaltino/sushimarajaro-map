@@ -1216,6 +1216,10 @@
   .gate-go{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:12.5px;font-weight:900;color:#191b1f;}
   .gate-go i{font-style:normal;transition:transform .18s ease;}
   .gate-card:hover .gate-go i{transform:translateX(3px);}
+  @media (min-width:701px){
+    .gate-brand{margin-top:16px;font-size:clamp(40px,4.2vw,52px);}
+    .gate-rule{width:66px;margin-top:16px;}
+  }
   @media (max-width: 620px){
     .gate{--gate-px:12px;--gate-pt:18px;padding:var(--gate-pt) var(--gate-px) 16px;}
     .gate-cards{gap:9px;}
